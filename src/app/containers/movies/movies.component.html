@@ -1,0 +1,37 @@
+<p>Multi Busqueda</p>
+
+<input type="text" placeholder="Busca people/movies/companies" [(ngModel)]="name">
+<button (click)="fetchMultiSearchByName(name)">Buscar varios</button>
+
+<input type="text" placeholder="Busca tu pelicula" [(ngModel)]="name">
+<button (click)="fetchMoviesByTitle(name)">Buscar</button>
+
+<main >
+    <div class="col-6">
+        <h3>Personas</h3>
+        <div *ngFor="let unico of varios">
+            <div *ngIf="unico.media_type === 'person'"> 
+                <p> {{ unico.name }} </p>
+                <!-- <img [src]= "getImage(unico)" alt="" [routerLink]="'/detalles/' + unico.id"> -->
+            </div>  
+        </div>
+    </div>
+    
+    <div class="col-6">
+        <h3>Movies</h3>
+        <div class="row" *ngFor="let unico of varios">
+            <div *ngIf="unico.media_type === 'movie'"> 
+                <p> {{ unico.original_title }} </p>
+                <!-- <img [src]= "getImage(unico)" alt="" [routerLink]="'/detalles/' + unico.id"> -->
+            </div>  
+        </div>
+    </div>
+
+    <div class="grid">
+        <div *ngFor="let pelicula of peliculas">
+            <p> {{ pelicula.original_title }} </p>
+            <img [src]= "getImage(pelicula)" alt="" [routerLink]="'/detalles/' + pelicula.id">
+            <button> <a [routerLink]="'/detalles/' + pelicula.id"> Ver Detalles</a> </button>
+        </div>
+    </div>
+</main>

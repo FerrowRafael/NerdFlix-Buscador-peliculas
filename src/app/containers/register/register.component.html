@@ -1,0 +1,185 @@
+
+<div>
+  <div class="modal-dialog form-dark" role="document">
+
+    <div class="modal-content card card-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/pricing-table%20(7).jpg');">
+      <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
+
+        <div class="modal-header text-center pb-4">
+          <h3 class="modal-title w-100 white-text font-weight-bold" id="myModalLabel"><strong>REGISTRO</strong></h3>
+          <button type="button" class="close white-text" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+
+          <div class="md-form mb-5">
+            <label for="username">Nombre</label>
+            <input class="form-control validate white-text" name="username" #username="ngModel" 
+            id="username" placeholder="Nombre de usuario" type="text"
+            ngModel required username minlength="5" maxlength="30" class="form-control validate white-text"> 
+            <div *ngIf="username.invalid && (username.dirty || username.touched)"
+              class="alert alert-danger">
+              <div *ngIf="username.errors.required">
+                El nombre es requerido
+              </div>
+              <div *ngIf="username.errors.minlength">
+                El nombre debe tener mas de 5 caracteres
+              </div>
+              <div *ngIf="username.errors.maxlength">
+                El nombre debe tener menos de 30 caracteres
+              </div>
+            </div>
+          </div>
+
+          <div class="md-form mb-5">
+            <input name="email" class="form-control validate white-text" #email="ngModel" id="email" placeholder="Email" type="email"
+            ngModel required email minlength="5" minlength="50" class="form-control validate white-text"> 
+            <div *ngIf="email.invalid && (email.dirty || email.touched)"
+              class="alert alert-danger">
+              <div *ngIf="email.errors.required">
+                El email es requerido
+              </div>
+              <div *ngIf="email.errors.minlength">
+                El email debe tener mas de 5 caracteres
+              </div>
+              <div *ngIf="email.errors.maxlength">
+                El nombre debe tener menos de 50 caracteres
+              </div>
+              <div *ngIf="">
+                El email es requerido
+              </div>
+            </div>
+          </div>
+    
+
+          
+            <div class="md-form mb-5">
+              <input class="form-control validate white-text" name="password" #password="ngModel" id="password" 
+              placeholder="Contraseña" type="password"
+              ngModel required password minlength="7" class="form-control validate white-text"> 
+              <div *ngIf="password.invalid && (password.dirty || password.touched)"
+                class="alert alert-danger">
+                <div *ngIf="password.errors.required">
+                  La contraseña es requerida
+                </div>
+                <div *ngIf="password.errors.minlength">
+                  La contraseña debe tener mas de 7 caracteres
+                </div>
+              </div>
+            </div>
+           
+          
+          <div class="row d-flex align-items-center mb-4">
+            <div class="text-center mb-3 col-md-12">
+              <button type="submit" class="btn btn-success btn-block btn-rounded z-depth-1">Registrarse</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <p class="font-small white-text d-flex justify-content-end">¿Tienes una cuenta? <a [routerLink]="'/login'" class="green-text ml-1 font-weight-bold">
+                  Log in</a></p>
+            </div>  
+          </div>
+          <div class="succesmessage" *ngIf="successMsg">
+            <p>Hola</p>
+            {{successMsg}}
+          </div>
+          
+          <div class="errormessage">
+            <p>Adios</p>
+            {{errorMsg}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+  
+<!-- <div class="registerContainer">
+  <form #registerForm="ngForm" (submit)="register(registerForm)">
+    <input type="text" name="username" ngModel placeholder="Nombre" required username>
+    <input type="email" name="email" ngModel placeholder="Email" required email>
+    <input type="password" name="password" ngModel placeholder="Contraseña" required password>
+    <button type="submit">Conectarse</button>
+  </form>
+</div> -->
+
+  
+<!-- <div class="register">
+    <form #registerForm='ngForm'(submit)="register(registerForm)">
+    <h2>Registro</h2> 
+
+      <div>
+        <label for="username">Nombre</label>
+        <input name="username" #username="ngModel" id="username" placeholder="Nombre de usuario" type="text"
+        ngModel required username minlength="5" maxlength="30" class="form-control validate white-text"> 
+        <div *ngIf="username.invalid && (username.dirty || username.touched)"
+          class="alert alert-danger">
+          <div *ngIf="username.errors.required">
+            El nombre es requerido
+          </div>
+          <div *ngIf="username.errors.minlength">
+            El nombre debe tener mas de 5 caracteres
+          </div>
+          <div *ngIf="username.errors.maxlength">
+            El nombre debe tener menos de 30 caracteres
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <input name="email" #email="ngModel" id="email" placeholder="Email" type="email"
+        ngModel required email minlength="7" minlength="50" class="form-control validate white-text"> 
+        <div *ngIf="email.invalid && (email.dirty || email.touched)"
+          class="alert alert-danger">
+          <div *ngIf="email.errors.required">
+            El email es requerido
+          </div>
+          <div *ngIf="email.errors.minlength">
+            El email debe tener mas de 5 caracteres
+          </div>
+          <div *ngIf="email.errors.maxlength">
+            El nombre debe tener menos de 50 caracteres
+          </div>
+          <div *ngIf="">
+            El email es requerido
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <input name="password" #password="ngModel" id="password" placeholder="Contraseña" type="password"
+        ngModel required password minlength="7" class="form-control validate white-text"> 
+        <div *ngIf="password.invalid && (password.dirty || password.touched)"
+          class="alert alert-danger">
+          <div *ngIf="password.errors.required">
+            La contraseña es requerida
+          </div>
+          <div *ngIf="password.errors.minlength">
+            La contraseña debe tener mas de 7 caracteres
+          </div>
+        </div>
+      </div>
+        
+      <button type="submit">Send</button>
+      <div class="col-md-12">
+        <p class="font-small white-text d-flex justify-content-end">¿Tienes una cuenta? <a [routerLink]="'/login'" class="green-text ml-1 font-weight-bold">
+            Log in</a></p>
+      </div>
+        
+      <div class="succesmessage" *ngIf="successMsg">
+        {{successMsg}}
+      </div>
+      
+      <div class="errormessage">
+        {{errorMsg}}
+      </div>
+    </form>
+</div>
+ -->

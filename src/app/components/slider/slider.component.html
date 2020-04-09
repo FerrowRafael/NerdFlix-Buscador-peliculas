@@ -1,0 +1,9 @@
+<div class="slider-container">
+    <div class="slides" #slides>
+      <ng-content select="[appSliderItem]" #sliderItem></ng-content>
+    </div>
+    <div class="controls">
+      <button mat-raised-button color="primary" (click)="onClickLeft()">left</button>
+      <button mat-raised-button color="primary" (click)="onClickRight()">right</button>
+    </div>
+  </div>

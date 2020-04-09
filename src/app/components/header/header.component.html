@@ -1,0 +1,82 @@
+<!-- <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg pink">
+      <a class="navbar-brand"  routerLink=""><strong>NerdFlix</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-6"
+        aria-controls="navbarSupportedContent-6" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent-6">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="actores">Actores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="registro">Registro/Login</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-6" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">Generos </a>
+            <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-6">
+                <div *ngFor="let genre of genres">
+                    <p> {{ genre.name }} </p>
+                </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+            <form class="form-inline">
+                <div class="md-form my-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                </div>
+                    <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
+                </form>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user"></i> Profile </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                <a class="dropdown-item" routerLink="perfil">My account</a>
+                <a class="dropdown-item" routerLink="registro">Log out</a>
+            </div>
+            </li>
+        </ul>
+      </div>
+    </nav>
+  </div> -->
+
+
+  <header>
+    <div>
+      <a class="navbar-brand"  routerLink=""><strong>NerdFlix.</strong></a>
+     
+    </div>
+    
+    <div>
+      <span routerLink="" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">Home</span>
+      <span routerLink="actores" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">Actores</span>
+      <span routerLink="movies" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">Busqueda</span>
+      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-6" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">Generos </a>
+    </div>
+
+    <div class="user" *ngIf="usuarioService.user">
+        <span [routerLink]="['/profile']" routerLinkActive="is-active" >{{usuarioService.user['username']}}</span>
+        <span (click)="logout()" >Logout</span>
+    </div>
+    <div class="guest"  *ngIf="!usuarioService.user">
+        <span [routerLink]="['/login']" routerLinkActive="is-active" >Login</span>
+        <span [routerLink]="['/registro']" routerLinkActive="is-active" >Registro</span>
+    </div>
+    <!-- <div>
+    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false">
+      <i class="fas fa-user"></i> Profile </a>
+      <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+        <a class="dropdown-item" routerLink="perfil">My account</a>
+        <a class="dropdown-item" routerLink="">Log out</a>
+      </div>
+    </div> -->
+</header>

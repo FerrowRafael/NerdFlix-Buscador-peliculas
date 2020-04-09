@@ -1,0 +1,27 @@
+<h2>Perfil Administrador</h2>
+
+<div id="list-example" class="list-group">
+    <a class="list-group-item list-group-item-action" href="adminperfil/#buscadorUsuario">Buscador Usuarios</a>
+    <a class="list-group-item list-group-item-action" href="adminperfil/#datosUsuario">Usuarios registrados</a>
+    <a class="list-group-item list-group-item-action" href="adminperfil/#modificarDatos">Modificar datos</a>
+    <a class="list-group-item list-group-item-action" href="adminperfil/#peliculasAlquiladas">Peliculas Alquiladas</a>
+  </div>
+  <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+    <h3 id="buscadorUsuario">Buscador Usuarios</h3>
+        <form>
+            <input type="text">
+        </form>
+    <h3 id="datosUsuario">Usuarios registrados</h3>
+        <div *ngFor="let user of users">
+            <p> Id: {{ user.id }} </p>
+            <p> Nombre: {{ user.username }} </p>
+            <p> Email: {{ user.email }} </p>
+            <p> Contraseña: {{ user.password }} </p>
+        </div>
+        <div>
+        </div>
+    <h3 id="modificarDatos">Modificar datos</h3>
+    <p>Gooooooo</p>
+    <h3 id="peliculasAlquiladas">Peliculas Alquiladas</h3>
+    <p>No se</p>
+  </div>

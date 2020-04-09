@@ -1,0 +1,26 @@
+<h2>Peliculas</h2>
+
+<input type="text" placeholder="Busca tu pelicula" [(ngModel)]="name">
+<button> <a [routerLink]="'/movies/' + (name)"> Buscar peliculas</a> </button>
+
+<app-slider>
+    <div appSliderItem *ngFor="let pelicula of peliculasEs | slice:0:10">
+		<mat-card class="example-card">
+			<mat-card-header>
+				<mat-card-title>{{ pelicula.original_title | slice:0:15}}</mat-card-title>
+			</mat-card-header>
+			<img mat-card-image [src]= "getImage(pelicula)" alt="" [routerLink]="'/detalles/' + pelicula.id">
+    </mat-card>
+  </div>
+</app-slider>
+
+<app-slider>
+    <div appSliderItem *ngFor="let pelicula of peliculasPop | slice:0:10">
+		<mat-card class="example-card">
+			<mat-card-header>
+				<mat-card-title>{{ pelicula.original_title  | slice:0:20}}</mat-card-title>
+			</mat-card-header>
+			<img mat-card-image [src]= "getImage(pelicula)" alt="" [routerLink]="'/detalles/' + pelicula.id">
+    </mat-card>
+  </div>
+</app-slider>

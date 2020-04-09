@@ -1,0 +1,31 @@
+.container {
+    width: 100vw;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+}
+
+img {
+    height: 60vh;
+}
+
+.mat-card{
+    margin: 1em;
+}
+
+p {
+    font-family: Lato;
+  }
+  
+  .example-card {
+    max-width: 400px;
+  }
+  
+  [appSliderItem] {
+    flex-shrink: 0;
+  }
+  

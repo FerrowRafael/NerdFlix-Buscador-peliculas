@@ -1,0 +1,12 @@
+<p>Actores</p>
+
+<input type="text" placeholder="Busca tu pelicula" [(ngModel)]="name">
+<button (click)="fetchPeopleByName(name)">Buscar</button>
+
+<main class="grid">
+    <div *ngFor="let actor of actores">
+        <p> {{ actor.name }} </p>
+        <img [src]= "getImage(actor)" alt="" [routerLink]="'/detalles/' + actor.id">
+        <button> <a [routerLink]="'/detalles/' + actor.id"> Ver Detalles</a> </button>
+    </div>
+</main>

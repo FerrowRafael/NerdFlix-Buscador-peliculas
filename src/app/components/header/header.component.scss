@@ -1,0 +1,25 @@
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1f1f1f;
+    color: white;
+    padding: 0.4em;
+  
+    div {
+  
+      display: flex;
+      justify-content: space-around;
+      width: 25%;
+    }
+  
+    span {
+      cursor: pointer;
+      padding: 0.8em;
+    }
+  
+    .is-active {
+      background-color: rgb(0, 158, 167);
+      color: black;
+    }
+  }

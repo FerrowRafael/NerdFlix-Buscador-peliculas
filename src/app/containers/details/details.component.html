@@ -1,0 +1,86 @@
+<h2>Detalles</h2>
+
+<section>
+    <div class="row">
+        <div class="col-4 ">
+            <h3> {{ detalle.original_title }} </h3>
+            <img [src]= "getImage(detalle)" alt="">
+        </div>
+
+        <div class="col-8">
+            <p> ID: {{ detalle.id }} </p>
+            <p> Votacion: {{ detalle.vote_average }} </p>
+            <p> {{ detalle.overview }} </p>
+            <p> {{ detalle.release_date | date:"dd/MM/yy" }} </p>
+            <div *ngIf="detalle.homepage">
+                <a href="{{ detalle.homepage}}" target="_blank">Web pelicula</a>
+    
+            </div>
+            <p><strong>Generos</strong></p>
+            <div *ngFor="let genre of genres | slice:0:4"> 
+                <p> {{ genre.name }} </p>
+            </div>  
+            <p><strong>Productoras</strong></p>
+            <div *ngFor="let companie of companies | slice:0:2"> 
+                <p> {{ companie.name }} </p>
+            </div> 
+   
+            <a href="{{video}}" target="_blank">Trailer</a>
+            
+            <div *ngIf="detalle.belongs_to_collection">
+                <p>{{ detalle.belongs_to_collection.name}}</p>
+                <img [src]= "getImage(detalle)" alt="">
+            </div>
+
+        <button> Alquilar </button>
+        </div>
+    </div>
+        
+
+    <!-- Actores -->
+    <div>
+        <h3>Casting</h3>
+        <div class="grid">
+            <div *ngFor="let actor of actores | slice:0:8"> 
+                <h4> {{ actor.name }} </h4>
+                <p> {{ actor.character }} </p>
+                <img [src]= "getImage3(actor)" style="width: 30vh" alt="" [routerLink]="'/detalles/' + actor.id">
+            </div>
+        </div> 
+    </div>
+     
+
+    <!-- Peliculas Recomendadas -->
+    <div>
+        <h3>Recomendadas</h3>
+            <div class="grid">
+            <div *ngFor="let recommend of recommended | slice:0:4"> 
+                <p> {{ recommend.title }} </p>
+                <img [src]= "getImage2(recommend)" style="width: 30vh" alt="" [routerLink]="'/detalles/' + recommend.id">
+            </div>
+        </div>  
+    </div>
+
+
+    <!-- Peliculas Similares -->
+    <div>
+        <h3>Similares</h3>
+        <div class="grid">
+            <div *ngFor="let recommend of similars | slice:0:4"> 
+                <p> {{ recommend.title }} </p>
+                <img [src]= "getImage2(recommend)" style="width: 30vh" alt="" [routerLink]="'/detalles/' + recommend.id">
+            </div>
+        </div>
+    </div>
+      
+
+
+
+
+
+
+
+    
+
+    
+</section>

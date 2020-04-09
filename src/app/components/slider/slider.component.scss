@@ -1,0 +1,23 @@
+.slider-container {
+    display: flex;
+    flex-direction: column
+  }
+  
+  .slides {
+    display: flex;
+    overflow-x: scroll;
+    // This is not supported by all browsers. If you want a different animation, please feel free
+    // to find your own solution.
+    scroll-behavior: smooth;
+  
+    &::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+    }
+  
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: center;
+  }
