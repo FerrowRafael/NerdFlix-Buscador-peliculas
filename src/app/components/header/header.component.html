@@ -48,28 +48,28 @@
   </div> -->
 
 
-  <header>
-    <div>
-      <a class="navbar-brand"  routerLink=""><strong>NerdFlix.</strong></a>
-     
-    </div>
-    
-    <div>
-      <span routerLink="" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">Home</span>
-      <span routerLink="actores" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">Actores</span>
-      <span routerLink="movies" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">Busqueda</span>
-      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-6" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">Generos </a>
-    </div>
+    <header>
+      <div>
+        <a class="navbar-brand"  routerLink=""><strong>NerdFlix.</strong></a>
+      
+      </div>
+      
+      <div>
+        <span routerLink="" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">Home</span>
+        <span routerLink="actores" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">Actores</span>
+        <span routerLink="movies" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">Busqueda</span>
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-6" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">Generos </a>
+      </div>
 
-    <div class="user" *ngIf="usuarioService.user">
-        <span [routerLink]="['/profile']" routerLinkActive="is-active" >{{usuarioService.user['username']}}</span>
-        <span (click)="logout()" >Logout</span>
-    </div>
-    <div class="guest"  *ngIf="!usuarioService.user">
-        <span [routerLink]="['/login']" routerLinkActive="is-active" >Login</span>
-        <span [routerLink]="['/registro']" routerLinkActive="is-active" >Registro</span>
-    </div>
+      <div class="user" *ngIf="usuarioService.user">
+          <span [routerLink]="['/profile']" routerLinkActive="is-active" >{{usuarioService.user['username']}}</span>
+          <span (click)="logout()" >Logout</span>
+      </div>
+      <div class="guest"  *ngIf="!usuarioService.user">
+          <span [routerLink]="['/login']" routerLinkActive="is-active" >Login</span>
+          <span [routerLink]="['/registro']" routerLinkActive="is-active" >Registro</span>
+      </div>
     <!-- <div>
     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
     aria-haspopup="true" aria-expanded="false">

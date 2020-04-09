@@ -22,15 +22,16 @@ import { MoviesComponent } from './containers/movies/movies.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AdminProfileComponent } from './containers/admin-profile/admin-profile.component';
-
+import { SliderComponent } from './components/slider/slider.component';
+import { SliderItemDirective } from './components/slider/slider-item.directive';
 
 //#endregion
 
 //#region AngularMaterial
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from './material.module';
-import { SliderComponent } from './components/slider/slider.component';
-import { SliderItemDirective } from './components/slider/slider-item.directive';
+
+
 //#endregion
 
 @NgModule({
@@ -56,7 +57,7 @@ import { SliderItemDirective } from './components/slider/slider-item.directive';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
 
 
   ],

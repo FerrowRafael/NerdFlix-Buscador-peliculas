@@ -16,6 +16,15 @@
             </div>  
         </div>
     </div>
+
+    <!-- <div *ngFor="let pelicula of peliculasEs | slice:0:4">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>{{ pelicula.original_title | slice:0:15}}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image [src]= "getImage(pelicula)" alt="" [routerLink]="'/detalles/' + pelicula.id">
+        </mat-card>
+    </div> -->
     
     <div class="col-6">
         <h3>Movies</h3>
@@ -35,3 +44,4 @@
         </div>
     </div>
 </main>
+

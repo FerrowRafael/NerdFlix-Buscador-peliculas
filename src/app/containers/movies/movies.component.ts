@@ -23,6 +23,7 @@ export class MoviesComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
+      console.log(params);
       // this.fetchMultiSearchByName(params.name);
       this.fetchMoviesByTitle(params.name);
     });
@@ -44,7 +45,9 @@ export class MoviesComponent implements OnInit {
   }
 
   fetchMoviesByTitle(name: string) {
+    console.log(name);
     this.peliculasService.getMoviesByTitle(name).subscribe((pelicula: any) => {
+
       this.peliculas = pelicula.results;
     });
   }

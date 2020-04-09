@@ -47,4 +47,10 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  pasarNombre(name: string){
+    console.log(name);
+    const nombre = this.name;
+    return nombre;
+  }
+
 }
