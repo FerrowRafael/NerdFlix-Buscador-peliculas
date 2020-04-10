@@ -17,7 +17,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(loginForm: NgForm) {
-
     if (loginForm.valid) {
       this.usuariosService.login(loginForm.value)
         .subscribe(res => {

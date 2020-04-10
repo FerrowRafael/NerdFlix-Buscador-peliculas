@@ -7,15 +7,27 @@
 <button (click)="fetchMoviesByTitle(name)">Buscar</button>
 
 <main >
+    <h3>Personas</h3>
+    <div appSliderItem *ngFor="let unico of varios | slice:0:20">
+        <div *ngIf="unico.media_type === 'person'">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-title>{{ unico.name }}</mat-card-title>
+                </mat-card-header>
+                <img [src]= "getImage(unico)" alt="" [routerLink]="'/detalles/' + unico.id">
+            </mat-card>
+        </div>
+    </div>
+<!--       
     <div class="col-6">
         <h3>Personas</h3>
         <div *ngFor="let unico of varios">
             <div *ngIf="unico.media_type === 'person'"> 
                 <p> {{ unico.name }} </p>
-                <!-- <img [src]= "getImage(unico)" alt="" [routerLink]="'/detalles/' + unico.id"> -->
+                <img [src]= "getImage(unico)" alt="" [routerLink]="'/detalles/' + unico.id">
             </div>  
         </div>
-    </div>
+    </div> -->
 
     <!-- <div *ngFor="let pelicula of peliculasEs | slice:0:4">
         <mat-card class="example-card">
@@ -26,12 +38,12 @@
         </mat-card>
     </div> -->
     
-    <div class="col-6">
+    <!-- <div class="col-6">
         <h3>Movies</h3>
         <div class="row" *ngFor="let unico of varios">
             <div *ngIf="unico.media_type === 'movie'"> 
                 <p> {{ unico.original_title }} </p>
-                <!-- <img [src]= "getImage(unico)" alt="" [routerLink]="'/detalles/' + unico.id"> -->
+                <img [src]= "getImage(unico)" alt="" [routerLink]="'/detalles/' + unico.id">
             </div>  
         </div>
     </div>
@@ -42,6 +54,18 @@
             <img [src]= "getImage(pelicula)" alt="" [routerLink]="'/detalles/' + pelicula.id">
             <button> <a [routerLink]="'/detalles/' + pelicula.id"> Ver Detalles</a> </button>
         </div>
+    </div> -->
+
+
+    <h3>Personas</h3>
+    <div class="grid" appSliderItem *ngFor="let pelicula of peliculas">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>{{ pelicula.original_title }}</mat-card-title>
+            </mat-card-header>
+            <img [src]= "getImage(pelicula)" alt="" [routerLink]="'/detalles/' + pelicula.id">
+        </mat-card>
+        
     </div>
 </main>
 

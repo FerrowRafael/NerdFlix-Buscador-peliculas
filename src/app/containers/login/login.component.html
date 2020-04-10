@@ -1,58 +1,48 @@
 
-<!-- <div>
+ <div>
     <div class="modal-dialog form-dark" role="document">
    
       <div class="modal-content card card-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/pricing-table%20(7).jpg');">
         <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
         
           <div class="modal-header text-center pb-4">
-            <h3 class="modal-title w-100 white-text font-weight-bold" id="myModalLabel"><strong>LOGIN</strong></h3>
-            <button type="button" class="close white-text" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+            <h3 class="modal-title w-100 white-text font-weight-bold" id="myModalLabel"><strong>LOGIN</strong></h3> 
           </div>
-         
-          <div class="modal-body">
-
+          
+          <form class="modal-body" #loginForm="ngForm" (submit)="login(loginForm)">
             <div class="md-form mb-5">
-              <input type="email" id="Form-email5" class="form-control validate white-text" placeholder="Email">
+              <input class="form-control validate white-text" type="email" name="email" ngModel placeholder="Email" required email>
             </div>
   
             <div class="md-form mb-5">
-              <input type="password" id="Form-pass5" class="form-control validate white-text" placeholder="Contraseña">
+              <input class="form-control validate white-text" type="password" name="password" ngModel placeholder="Contraseña" required>
               <p class="font-small blue-text d-flex justify-content-end">Forgot <a href="#" class="blue-text ml-1">
                 Password?</a></p>
             </div>
   
-  
             <div class="row d-flex align-items-center mb-4">
-  
-     
               <div class="text-center mb-3 col-md-12">
-                <button type="button" class="btn btn-success btn-block btn-rounded z-depth-1">Logearse</button>
+                <button type="submit" class="btn btn-success btn-block btn-rounded z-depth-1">Logearse</button>
               </div>
-     
-  
             </div>
        
             <div>
                 <p>Aún no eres miembro? <a [routerLink]="'/registro'" class="blue-text"> Registro</a></p>
-                <p class="font-small blue-text d-flex ">Forgot <a href="#" class="blue-text ml-1">
-                    Password?</a></p>
+                <p class="font-small blue-text d-flex ">Forgot <a href="#" class="blue-text ml-1">Password?</a></p>
             </div>
   
-          </div>
+          </form>
         </div>
       </div>
     
     </div>
-  </div> -->
+  </div>
 
   
-  <div class="login">
+  <!-- <div class="login">
     <form #loginForm="ngForm" (submit)="login(loginForm)">
       <input type="email" name="email" ngModel placeholder="email" required email>
       <input type="password" name="password" ngModel placeholder="password" required>
       <button mat-button type="submit">Conectarse</button>
     </form>
-  </div>
+  </div> -->

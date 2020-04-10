@@ -7,13 +7,9 @@
 
         <div class="modal-header text-center pb-4">
           <h3 class="modal-title w-100 white-text font-weight-bold" id="myModalLabel"><strong>REGISTRO</strong></h3>
-          <button type="button" class="close white-text" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
         </div>
 
-        <div class="modal-body">
-
+        <form class="modal-body" #registerForm="ngForm" (submit)="register(registerForm)">
           <div class="md-form mb-5">
             <label for="username">Nombre</label>
             <input class="form-control validate white-text" name="username" #username="ngModel" 
@@ -91,7 +87,7 @@
             <p>Adios</p>
             {{errorMsg}}
           </div>
-        </div>
+        </form>
       </div>
     </div>
 

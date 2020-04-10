@@ -3,6 +3,7 @@
 <input type="text" placeholder="Busca tu pelicula" [(ngModel)]="name">
 <button> <a [routerLink]="'/movies/' + name"> Buscar peliculas</a> </button>
 
+<h3>Estrenos</h3>
 <app-slider>
     <div appSliderItem *ngFor="let pelicula of peliculasEs | slice:0:10">
 		<mat-card class="example-card">
@@ -14,6 +15,7 @@
   	</div>
 </app-slider>
 
+<h3>Populares</h3>
 <app-slider>
     <div appSliderItem *ngFor="let pelicula of peliculasPop | slice:0:10">
 		<mat-card class="example-card">
