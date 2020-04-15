@@ -11,6 +11,7 @@ import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+
   public errorMsg: string;
   public successMsg: string;
 
@@ -32,12 +33,12 @@ export class RegisterComponent implements OnInit {
         setTimeout(() => {
           this.router.navigate(['login']);
         }, 2000);
-    },
-    (error: HttpErrorResponse) => {
+      },
+      (error: HttpErrorResponse) => {
       this.errorMsg = error.error.message;
       setTimeout(() =>  this.errorMsg = '' , 2000);
-    }
-  );
+      }
+    );
   }
 }
 

@@ -31,7 +31,7 @@ export class SliderComponent implements AfterContentInit {
 
     if (this.slidesIndex > 0) {
       this.slidesIndex--;
-    } 
+    }
   }
 
   onClickRight() {

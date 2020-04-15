@@ -29,7 +29,7 @@ import { SliderItemDirective } from './components/slider/slider-item.directive';
 
 //#region AngularMaterial
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MaterialModule} from './material.module';
+import { MaterialModule } from './material.module';
 
 
 //#endregion

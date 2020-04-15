@@ -52,7 +52,8 @@ export class MoviesComponent implements OnInit {
     });
   }
 
-
+  // GRID
+  
 
 
 }

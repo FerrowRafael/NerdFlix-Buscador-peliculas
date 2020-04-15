@@ -25,24 +25,24 @@
                 <button type="submit" class="btn btn-success btn-block btn-rounded z-depth-1">Logearse</button>
               </div>
             </div>
+
+            <!-- Mensajes  -->
+            <div class="succesmessage" *ngIf="successMsg">
+              {{successMsg}}
+            </div>
+            
+            <div class="errormessage">
+              {{errorMsg}}
+            </div>
        
             <div>
                 <p>Aún no eres miembro? <a [routerLink]="'/registro'" class="blue-text"> Registro</a></p>
                 <p class="font-small blue-text d-flex ">Forgot <a href="#" class="blue-text ml-1">Password?</a></p>
             </div>
-  
+         
           </form>
         </div>
       </div>
     
     </div>
   </div>
-
-  
-  <!-- <div class="login">
-    <form #loginForm="ngForm" (submit)="login(loginForm)">
-      <input type="email" name="email" ngModel placeholder="email" required email>
-      <input type="password" name="password" ngModel placeholder="password" required>
-      <button mat-button type="submit">Conectarse</button>
-    </form>
-  </div> -->

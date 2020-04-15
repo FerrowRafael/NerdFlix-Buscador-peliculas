@@ -1,4 +1,4 @@
-<p>Multi Busqueda</p>
+<h2>Multi Busqueda</h2>
 
 <input type="text" placeholder="Busca people/movies/companies" [(ngModel)]="name">
 <button (click)="fetchMultiSearchByName(name)">Buscar varios</button>
@@ -7,17 +7,24 @@
 <button (click)="fetchMoviesByTitle(name)">Buscar</button>
 
 <main >
+
+
+
+    
     <h3>Personas</h3>
-    <div appSliderItem *ngFor="let unico of varios | slice:0:20">
-        <div *ngIf="unico.media_type === 'person'">
-            <mat-card class="example-card">
-                <mat-card-header>
-                    <mat-card-title>{{ unico.name }}</mat-card-title>
-                </mat-card-header>
-                <img [src]= "getImage(unico)" alt="" [routerLink]="'/detalles/' + unico.id">
-            </mat-card>
-        </div>
-    </div>
+        <mat-grid-list cols="2" rowHeight="3:1" *ngFor="let unico of varios | slice:0:20">
+            <ng-container *ngIf="unico.media_type === 'person'">
+                <mat-card class="cardListItem">
+                    <mat-card-header>
+                        <mat-card-title>{{ unico.name }}</mat-card-title>
+                    </mat-card-header>
+                    <img [src]= "getImage(unico)" alt="" [routerLink]="'/detalles/' + unico.id">
+                </mat-card>
+            </ng-container>
+        </mat-grid-list>
+    
+
+        
 <!--       
     <div class="col-6">
         <h3>Personas</h3>

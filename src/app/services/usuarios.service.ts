@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UsuariosService {
   public user: object;
+  public token = '';
 
   BASE = 'http://localhost:3000/';
 
@@ -52,5 +53,9 @@ export class UsuariosService {
 
   setUser(user: object) {
     this.user = user;
+  }
+
+  setToken(token: string): void {
+    this.token = token;
   }
 }
